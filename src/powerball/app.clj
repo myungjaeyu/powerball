@@ -1,5 +1,6 @@
-(ns powerball.app)
+(ns powerball.app
+  (:require [powerball.crawler.core :refer [get-powerball]]))
 
 (defn app []
-  (-> "powerball"
+  (-> (get-powerball "2019-08-15" 1)
       println))
