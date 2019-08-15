@@ -1,4 +1,5 @@
-(ns powerball.core)
+(ns powerball.core
+  (:require [powerball.app :refer [app]]))
 
 (defn -main []
-  (println "powerball"))
+  (app))
