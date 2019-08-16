@@ -76,7 +76,7 @@
 
 (defn get-powerball [date row]
   (-> @(http/post api-url
-                  {:form-params {:searcdDate date 
+                  {:form-params {:searchDate date 
                                  :startRow row}})
       :body
       html/html-snippet
