@@ -1,0 +1,12 @@
+CREATE TABLE "powerball" (
+    id SERIAL PRIMARY KEY, 
+    round integer NOT NULL,
+    ball integer NOT NULL,
+    uo integer NOT NULL,
+    oe integer NOT NULL,
+    section integer NOT NULL,
+    size integer NOT NULL,
+    pball integer NOT NULL,
+    puo integer NOT NULL,
+    poe integer NOT NULL,
+    psection integer NOT NULL);

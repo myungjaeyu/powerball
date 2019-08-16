@@ -1,0 +1,5 @@
+{:db-type "postgres"
+ :db-name "postgres"
+ :db-user "postgres"
+ :db-host "localhost"
+ :db-password "postgres"}
