@@ -55,8 +55,10 @@
         :else 1))
 
 (defn get-row [row]
-  (let [{:keys [round ball pball]} row]
-    {:round round
+  (let [{:keys [date num round ball pball]} row]
+    {:date (java.sql.Timestamp/valueOf (str date " 00:00:00"))
+     :num (- 289 num)
+     :round round
      :ball ball
      :uo (is-under? 72.5 ball)
      :oe (is-odd? ball)
@@ -67,10 +69,12 @@
      :poe (is-odd? pball)
      :psection (is-psection? pball)}))
 
-(defn get-data [dom]
+(defn get-data [date row dom]
   (-> (html/select dom [:.count])
-      (->> (map (fn [elem]
-                  (get-row {:round (get-round elem)
+      (->> (map-indexed (fn [index elem]
+                  (get-row {:date date
+                            :num (+ index row)
+                            :round (get-round elem)
                             :ball (get-ball elem)
                             :pball (get-pball elem)}))))))
 
@@ -80,4 +84,5 @@
                                  :startRow row}})
       :body
       html/html-snippet
-      get-data))
+      ((fn [dom]
+         (get-data date row dom)))))
