@@ -5,5 +5,6 @@
                  [toucan "1.12.0"]
                  [org.postgresql/postgresql "42.2.5"]
                  [environ "1.1.0"]
-                 [enlive "1.1.6"]]
+                 [enlive "1.1.6"]
+                 [clj-time "0.15.2"]]
   :profiles {:dev {:dependencies [[javax.servlet/servlet-api "2.5"]]}})
