@@ -1,5 +1,7 @@
 CREATE TABLE "powerball" (
     id SERIAL PRIMARY KEY, 
+    date date NOT NULL,
+    num integer NOT NULL,
     round integer NOT NULL,
     ball integer NOT NULL,
     uo integer NOT NULL,
